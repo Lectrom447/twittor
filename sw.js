@@ -1,4 +1,15 @@
-importScripts('/js/sw-utils.js')
+var url = window.location.href
+var swUtlLocation = '/twittor/js/sw-utils.js'
+
+
+    if(url.includes('localhost')){
+        swUtlLocation = '/js/sw-utils.js'
+    }
+
+
+
+
+importScripts(swUtlLocation)
 
 const STATIC_CACHE = 'static-v3'
 const DYNAMIC_CACHE = 'dynamic-v1'
