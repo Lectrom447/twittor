@@ -80,7 +80,7 @@ self.addEventListener('fetch', e => {
         if (res){
             return res;
         }else {
-            return fetch(e.request,{mode:'no-cors'}).then( newRes => {
+            return fetch(e.request).then( newRes => {
                 return actualizaCacheDinamico(DYNAMIC_CACHE, e.request, newRes)
             })
         }
